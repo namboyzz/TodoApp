@@ -18,7 +18,9 @@ function App() {
     )
   }
   const deleteTodo = (id)=>{
-    setTodos(todos.filter((todo)=>todo.id !== id))
+    if(confirm("ban co muon xoa khong")){
+      setTodos(todos.filter((todo)=>todo.id !== id))
+    }
   }
 
   return (

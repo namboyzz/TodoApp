@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 const TodoInput = ({addTodo}) => {
     const [value, setValue] = useState("")
     const onSubmit = (e)=>{
-        e.prevenDefault();
+        e.preventDefault();
+        if(!value.trim()) return;
         addTodo(value);
         setValue("")
     }
